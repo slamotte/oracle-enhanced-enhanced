@@ -9,8 +9,12 @@ Gem::Specification.new do |s|
   s.authors     = ["Steve Lamotte"]
   s.email       = ["slamotte@winnipeg.ca"]
   s.homepage    = "http://gems.winnipegtransit.org"
-  s.summary     = %q{Additional enhancements/customizations to the Oracle Enhanced adapter}
-  s.description = %q{This gem includes several enhancements and customizations to the standard Oracle Enhanced adapter, which is still required. Any customizations to this adapter's behaviour or additional Oracle-specific utilities should be added here.}
+  s.summary     = %q{Additional enhancements/customizations to the excellent ActiveRecord Oracle Enhanced adapter}
+  s.description = <<-END
+This gem includes several enhancements and customizations to the standard ActiveRecord Oracle Enhanced adapter, which is still required.
+
+Any customizations to this adapter's behaviour or additional Oracle-specific utilities should be added here.
+END
 
   s.rubyforge_project = "oracle-enhanced-enhanced"
 
