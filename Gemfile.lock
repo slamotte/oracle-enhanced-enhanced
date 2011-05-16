@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    oracle-enhanced-enhanced (0.0.6)
+    oracle-enhanced-enhanced (0.1.0)
       activerecord-oracle_enhanced-adapter
 
 GEM
@@ -13,4 +13,5 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  activerecord-oracle_enhanced-adapter
   oracle-enhanced-enhanced!
