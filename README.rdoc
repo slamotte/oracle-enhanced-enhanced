@@ -1,0 +1,56 @@
+= oracle-enhanced-enhanced
+
+While an outstanding offering that enables us to use Oracle as our database (whether we like it or not), the "Oracle
+Enhanced ActiveRecord Adapter"[] has a few behaviours that I find myself altering in all my Rails projects.
+Made sense to throw them all into a gem.
+
+== How It Works
+
+Add this gem to your project and it will override the following defaults:
+
+* sequences will be created with the +start_value+ options "1 NOCACHE ORDER"
+* +cache_columns+ is set to +true+, saving loads in terms of data dictionary lookups (but requiring a restart if you change a table)
+* +TEXT+ fields are stored as VARCHAR2(4000) instead of +CLOB+s
+
+=== Converting CLOB Columns to VARCHAR2
+
+You can convert existing CLOB columns to VARCHAR2(4000) in a migration using:
+
+  class ConvertTextColumns < ActiveRecord::Migration
+    def self.up
+      convert_clob_to_varchar2 :table_name, :column_name
+    end
+
+    def self.down
+      convert_varchar2_to_clob :table_name, :column_name
+    end
+  end
+
+You can optionally specify the VARCHAR2 size as a third parameter to +convert_clob_to_varchar2+.
+
+=== Other Methods
+
+You can at any time change the text representation by calling +set_text_storage_representation+. See the rdoc for more details.
+
+There are also helper methods +text_is_clob?+ and +text_is_varchar2?+, and a new constant +VARCHAR2_MAX_LENGTH+. Note
+that these methods are added to +ActiveRecord::ConnectionAdapters::OracleEnhancedAdapter+.
+==
+
+== Known Issues
+
+None
+
+== Contributing
+ 
+* Check out the latest master to make sure the feature hasn't been implemented or the bug hasn't been fixed yet
+* Check out the issue tracker to make sure someone already hasn't requested it and/or contributed it
+* Fork the project
+* Start a feature/bugfix branch
+* Commit and push until you are happy with your contribution
+* Make sure to add tests for it. This is important so I don't break it in a future version unintentionally.
+* Please try not to mess with the Rakefile, version, or history. If you want to have your own version, or is otherwise necessary, that is fine, but please isolate to its own commit so I can cherry-pick around it.
+
+== Copyright
+
+Copyright (c) 2011 Steve Lamotte. See LICENSE.txt for further details.
+
