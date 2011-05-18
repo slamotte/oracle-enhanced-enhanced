@@ -1,8 +1,8 @@
 = oracle-enhanced-enhanced
 
 While an outstanding offering that enables us to use Oracle as our database (whether we like it or not), the Oracle
-Enhanced ActiveRecord Adapter (link[https://github.com/rsim/oracle-enhanced]) has a few behaviours that I find myself altering
-in all my Rails projects. Made sense to throw them all into a gem.
+Enhanced ActiveRecord Adapter (link[https://github.com/rsim/oracle-enhanced]) has a few behaviours that I find myself
+overriding in all my Rails projects. Made sense to throw them all into a gem.
 
 == How It Works
 
@@ -33,7 +33,7 @@ You can optionally specify the <tt>VARCHAR2</tt> size as a third parameter to <t
 You can at any time change the text representation by calling +set_text_storage_representation+. See the rdoc for more details.
 
 There are also helper methods <tt>text_is_clob?</tt> and <tt>text_is_varchar2?</tt>, and a new constant <tt>VARCHAR2_MAX_LENGTH</tt>. Note
-that these methods are added to <tt>ActiveRecord::ConnectionAdapters::OracleEnhancedAdapter</tt>.
+that these are added to <tt>ActiveRecord::ConnectionAdapters::OracleEnhancedAdapter</tt>.
 ==
 
 == Known Issues
