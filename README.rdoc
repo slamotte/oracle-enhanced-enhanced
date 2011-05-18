@@ -1,7 +1,7 @@
 = oracle-enhanced-enhanced
 
-While an outstanding offering that enables us to use Oracle as our database (whether we like it or not), the "Oracle
-Enhanced ActiveRecord Adapter"[https://github.com/rsim/oracle-enhanced] has a few behaviours that I find myself altering
+While an outstanding offering that enables us to use Oracle as our database (whether we like it or not), the Oracle
+Enhanced ActiveRecord Adapter (link[https://github.com/rsim/oracle-enhanced]) has a few behaviours that I find myself altering
 in all my Rails projects. Made sense to throw them all into a gem.
 
 == How It Works
