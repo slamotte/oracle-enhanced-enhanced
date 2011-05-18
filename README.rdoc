@@ -8,13 +8,13 @@ in all my Rails projects. Made sense to throw them all into a gem.
 
 Add this gem to your project and it will override the following defaults:
 
-* sequences will be created with the +start_value+ options: +1 NOCACHE ORDER+
+* sequences will be created with the +start_value+ options: <tt>1 NOCACHE ORDER</tt>
 * +cache_columns+ is set to +true+, saving loads in terms of data dictionary lookups (but requiring a restart if you change a table)
-* +TEXT+ fields are stored as +VARCHAR2(4000)+ instead of +CLOB+
+* +TEXT+ fields are stored as <tt>VARCHAR2(4000)</tt> instead of +CLOB+
 
 === Converting CLOB Columns to VARCHAR2
 
-You can convert existing +CLOB+ columns to +VARCHAR2(4000)+ in a migration using:
+You can convert existing +CLOB+ columns to <tt>VARCHAR2(4000)</tt> in a migration using:
 
   class ConvertTextColumns < ActiveRecord::Migration
     def self.up
@@ -26,14 +26,14 @@ You can convert existing +CLOB+ columns to +VARCHAR2(4000)+ in a migration using
     end
   end
 
-You can optionally specify the +VARCHAR2+ size as a third parameter to +convert_clob_to_varchar2+.
+You can optionally specify the <tt>VARCHAR2</tt> size as a third parameter to <tt>convert_clob_to_varchar2</tt>.
 
 === Other Methods
 
 You can at any time change the text representation by calling +set_text_storage_representation+. See the rdoc for more details.
 
-There are also helper methods +text_is_clob?+ and +text_is_varchar2?+, and a new constant +VARCHAR2_MAX_LENGTH+. Note
-that these methods are added to +ActiveRecord::ConnectionAdapters::OracleEnhancedAdapter+.
+There are also helper methods <tt>text_is_clob?</tt> and <tt>text_is_varchar2?</tt>, and a new constant <tt>VARCHAR2_MAX_LENGTH</tt>. Note
+that these methods are added to <tt>ActiveRecord::ConnectionAdapters::OracleEnhancedAdapter</tt>.
 ==
 
 == Known Issues
