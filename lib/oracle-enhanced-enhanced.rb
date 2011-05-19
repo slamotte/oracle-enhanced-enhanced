@@ -1,3 +1,5 @@
+require 'active_record/connection_adapters/oracle_enhanced_adapter'
+
 module ActiveRecord
   module ConnectionAdapters
     class OracleEnhancedAdapter
