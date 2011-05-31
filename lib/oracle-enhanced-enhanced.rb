@@ -1,4 +1,4 @@
-require 'active_record/connection_adapters/oracle_enhanced_adapter'
+require 'active_record/base'
 
 module ActiveRecord
   module ConnectionAdapters
@@ -28,7 +28,8 @@ module ActiveRecord
         # Use varchar2(4000) for TEXT fields
         set_text_storage_representation true
 
-        # Cache columns because we don't need to hit the database to check metadata all the time
+        # Cache columns because we don't need to hit the database to check metadata all the time.
+        # This requires that you restart your server when devleoping if your models change.
         #TODO: should we disable this for development?
         self.cache_columns = true
 
