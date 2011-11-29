@@ -7,6 +7,9 @@ module ActiveRecord
       # Maximum length of an Oracle VARCHAR2 field
       VARCHAR2_MAX_LENGTH = 4000
 
+      # Length of an Oracle primary key field
+      PRIMARY_KEY_LENGTH = 12
+
       # Indicate whether to use varchar2(length) for TEXT columns or clob (default).
       # Pass true or false to select varchar2 or clob, respectively. Optionally pass in the desired varchar2 length.
       def self.set_text_storage_representation(use_varchar2, length = VARCHAR2_MAX_LENGTH)
@@ -25,6 +28,9 @@ module ActiveRecord
 
       # Enable our enhanced settings/defaults
       def self.set_enhanced_defaults
+        # Use sane length for PK fields
+        NATIVE_DATABASE_TYPES[:primary_key] = "NUMBER(#{PRIMARY_KEY_LENGTH}) NOT NULL PRIMARY KEY"
+
         # Use varchar2(4000) for TEXT fields
         set_text_storage_representation true
 
