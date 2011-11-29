@@ -10,6 +10,7 @@ Add this gem to your project and it will override the following defaults:
 
 * sequences will be created with the +start_value+ options: <tt>1 NOCACHE ORDER</tt>
 * +cache_columns+ is set to +true+, saving loads in terms of data dictionary lookups (but requiring a restart if you change a table)
+* primary key columns will be created as NUMBER(12) instead of NUMBER(38)
 * +TEXT+ fields are stored as <tt>VARCHAR2(4000)</tt> instead of +CLOB+
 
 === Converting CLOB Columns to VARCHAR2
