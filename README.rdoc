@@ -36,7 +36,6 @@ You can at any time change the text representation by calling +set_text_storage_
 
 There are also helper methods <tt>text_is_clob?</tt> and <tt>text_is_varchar2?</tt>, and a new constant <tt>VARCHAR2_MAX_LENGTH</tt>. Note
 that these are added to <tt>ActiveRecord::ConnectionAdapters::OracleEnhancedAdapter</tt>.
-==
 
 == Known Issues
 
