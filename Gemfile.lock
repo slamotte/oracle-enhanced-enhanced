@@ -13,5 +13,4 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  activerecord-oracle_enhanced-adapter
   oracle-enhanced-enhanced!

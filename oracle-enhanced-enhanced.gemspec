@@ -7,8 +7,8 @@ Gem::Specification.new do |s|
   s.version     = Oracle::Enhanced::Enhanced::VERSION
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["Steve Lamotte"]
-  s.email       = ["slamotte@winnipeg.ca"]
-  s.homepage    = "http://gems.winnipegtransit.org"
+  s.email       = ["steve@lexor.ca"]
+  s.homepage    = "https://github.com/slamotte/oracle-enhanced-enhanced"
   s.summary     = %q{Additional enhancements/customizations to the excellent ActiveRecord Oracle Enhanced adapter}
   s.description = <<-END
 This gem includes several enhancements and customizations to the standard ActiveRecord Oracle Enhanced adapter, which is still required.

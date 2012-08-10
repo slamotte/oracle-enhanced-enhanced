@@ -36,11 +36,11 @@ module ActiveRecord
         set_text_storage_representation true
 
         # Cache columns because we don't need to hit the database to check metadata all the time.
-        # This requires that you restart your server when devleoping if your models change.
+        # This requires that you restart your server when developing if your models change.
         #TODO: should we disable this for development?
         self.cache_columns = true
 
-        # Oracle's default sequence behavious doesn't appeal to us OCD freaks who prefer monotonically increasing sequences
+        # Oracle's default sequence behaviour doesn't appeal to us OCD freaks who prefer monotonically increasing sequences
         self.default_sequence_start_value = "1 NOCACHE ORDER"
       end
 
@@ -73,9 +73,6 @@ module ActiveRecord
           alter table #{quoted_table_name} rename column #{temp_col} to #{orig_col}
         SQL
         cmds.split("\n").map(&:strip).each{|cmd| execute cmd}
-
-        # Also process any history table
-        convert_text_column_storage_type(history_table_name(table_name), column_name, to_type, temp_column_name) if history_table_exists?(table_name)
       end
     end
 
